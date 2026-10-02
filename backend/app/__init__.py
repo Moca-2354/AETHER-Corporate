@@ -1,0 +1,1 @@
+"""AETHER FastAPI application."""

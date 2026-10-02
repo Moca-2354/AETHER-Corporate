@@ -1,0 +1,26 @@
+.env
+.env.*
+!.env.example
+!.env.*.example
+.venv/
+node_modules/
+.next/
+out/
+__pycache__/
+.pytest_cache/
+*.py[cod]
+*.tsbuildinfo
+*.sqlite3*
+*.db*
+*.log
+.runtime/
+.DS_Store
+coverage/
+
+# Python virtual environments
+.venv/
+.venv*/
+venv/
+venv*/
+backend/.venv/
+backend/.venv*/
