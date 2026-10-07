@@ -175,23 +175,14 @@ Azure / Entra / Graphの実接続は、利用者の環境設定後に確認し�
 - 元の検索方式を維持しています。会話履歴による検索クエリの書き換えは未実装です。「その人」のような質問は人物名を含めてください。
 - 最年長検索は全件を対象にします。部署条件のフィルター、同年齢者全員の取得、全件集計は未実装です。
 - 文書単位のアクセス権フィルターは未実装です。同じインデックスを使う認証ユーザー全員が、その検索対象を閲覧できる前提です。
-- 「受信を停止」はブラウザの待機を中断します。すでに開始したAzureの処理や課金停止は保証しません。ストリーミング応答ではありません。
+- 「受信を停止」はブラウザの待機を中断します。すでに開始したAzureの処理や課金停止は保証しません。
 - セッションは初期値8時間で失効します。トークン更新はMSALのサーバー側キャッシュで管理します。
 - レート制限はプロセス内、セッションDBはローカルSQLiteです。複数台運用では共有ストア・共有レート制限への置き換えが必要です。
 - 公開運用はHTTPSとREQUIRE_LOGIN=trueを使用し、COOKIE_SECURE=true、FRONTEND_URL、CORS_ORIGINS、ALLOWED_HOSTS、REDIRECT_URIを実ドメインへ設定してください。
 - Uvicornは --no-access-log で起動します。リバースプロキシ側でも、OAuthコールバックのcodeなどをログへ記録しない設定にしてください。
 - Azureの鍵は管理者だけが扱い、最小権限のキーを使ってください。Djangoの秘密鍵や旧APIキーは本プロジェクトでは使用しません。
 
-## GitHubへ置く前に
-
-.env、.env.local、.runtime、DB、ログ、node_modules、.next、.venv は .gitignore の対象です。
-.env.example は値のない設定見本です。
-元の .git、実データ、古い認証情報をコピーしないでください。
-
-構成図とシーケンス図は docs/architecture.md を参照してください。
-検証結果は docs/validation.md に記録しています。
-
-## 参照した公式資料
+## 参照資料
 
 - [FastAPIのlifespan](https://fastapi.tiangolo.com/advanced/events/)
 - [FastAPIのCORS](https://fastapi.tiangolo.com/tutorial/cors/)
